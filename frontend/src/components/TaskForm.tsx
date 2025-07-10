@@ -61,7 +61,7 @@ const TaskForm = ({ task, onClose, onSubmit }: TaskFormProps) => {
           </h2>
           <button
             onClick={onClose}
-            className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+            className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors cursor-pointer"
           >
             <X className="h-6 w-6" />
           </button>
@@ -163,13 +163,13 @@ const TaskForm = ({ task, onClose, onSubmit }: TaskFormProps) => {
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition-colors"
+              className="px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition-colors cursor-pointer"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors cursor-pointer"
             >
               {task ? 'Update Task' : 'Create Task'}
             </button>

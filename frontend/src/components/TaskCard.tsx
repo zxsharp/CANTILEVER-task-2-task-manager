@@ -67,7 +67,7 @@ const TaskCard = ({ task, onEdit, onDelete, onToggle }: TaskCardProps) => {
           <div className="flex items-start space-x-3 flex-1">
             <button
               onClick={() => onToggle(task._id)}
-              className={`mt-1 transition-colors ${
+              className={`mt-1 transition-colors cursor-pointer ${
                 task.completed ? 'text-green-600 dark:text-green-400' : 'text-gray-400 dark:text-gray-500 hover:text-green-600 dark:hover:text-green-400'
               }`}
             >
@@ -96,13 +96,13 @@ const TaskCard = ({ task, onEdit, onDelete, onToggle }: TaskCardProps) => {
           <div className="flex items-center space-x-1">
             <button
               onClick={() => onEdit(task)}
-              className="p-1 text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              className="p-1 text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer"
             >
               <Edit className="h-4 w-4" />
             </button>
             <button
               onClick={() => onDelete(task._id)}
-              className="p-1 text-gray-400 dark:text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors"
+              className="p-1 text-gray-400 dark:text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors cursor-pointer"
             >
               <Trash2 className="h-4 w-4" />
             </button>

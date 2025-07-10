@@ -35,7 +35,7 @@ const TaskFilters = ({ filters, onFiltersChange }: TaskFiltersProps) => {
         </div>
         <button
           onClick={resetFilters}
-          className="text-sm text-purple-400 hover:text-purple-300 font-medium"
+          className="text-sm text-purple-400 hover:text-purple-300 font-medium cursor-pointer"
         >
           Reset Filters
         </button>
