@@ -41,7 +41,7 @@ const TasksPage = () => {
         if (value) queryParams.append(key, value);
       });
 
-      const data = await apiRequest(`/tasks?${queryParams}`);
+      const data = await apiRequest(`/api/tasks?${queryParams}`);
       setTasks(data.tasks);
     } catch (error) {
       toast.error('Failed to fetch tasks');
@@ -60,7 +60,7 @@ const TasksPage = () => {
 
   const handleCreateTask = async (taskData: Partial<Task>) => {
     try {
-      const data = await apiRequest('/tasks', {
+      const data = await apiRequest('/api/tasks', {
         method: 'POST',
         body: JSON.stringify(taskData),
       });
@@ -75,7 +75,7 @@ const TasksPage = () => {
 
   const handleUpdateTask = async (taskId: string, taskData: Partial<Task>) => {
     try {
-      const data = await apiRequest(`/tasks/${taskId}`, {
+      const data = await apiRequest(`/api/tasks/${taskId}`, {
         method: 'PUT',
         body: JSON.stringify(taskData),
       });
@@ -90,7 +90,7 @@ const TasksPage = () => {
 
   const handleDeleteTask = async (taskId: string) => {
     try {
-      await apiRequest(`/tasks/${taskId}`, {
+      await apiRequest(`/api/tasks/${taskId}`, {
         method: 'DELETE',
       });
 
@@ -103,7 +103,7 @@ const TasksPage = () => {
 
   const handleToggleTask = async (taskId: string) => {
     try {
-      const data = await apiRequest(`/tasks/${taskId}/toggle`, {
+      const data = await apiRequest(`/api/tasks/${taskId}/toggle`, {
         method: 'PATCH',
       });
 
