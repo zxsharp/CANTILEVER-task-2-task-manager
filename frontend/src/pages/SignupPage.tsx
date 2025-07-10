@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { CheckCircle, Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
@@ -9,7 +9,12 @@ const SignupPage = () => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const { signup } = useAuth();
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,7 +32,7 @@ const SignupPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-4">
       <div className="max-w-md w-full">
         {/* Logo */}
-        <div className="text-center mb-8">
+        <div className={`text-center mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`}>
           <Link to="/" className="flex items-center justify-center space-x-2">
             <CheckCircle className="h-10 w-10 text-purple-400" />
             <span className="text-3xl font-bold text-white">TaskFlow</span>
@@ -36,7 +41,7 @@ const SignupPage = () => {
         </div>
 
         {/* Signup Form */}
-        <div className="bg-slate-800/50 backdrop-blur-sm border border-purple-500/30 rounded-xl shadow-2xl p-8">
+        <div className={`bg-slate-800/50 backdrop-blur-sm border border-purple-500/30 rounded-xl shadow-2xl p-8 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="username" className="block text-sm font-medium text-purple-200 mb-2">

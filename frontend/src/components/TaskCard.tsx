@@ -57,9 +57,9 @@ const TaskCard = ({ task, onEdit, onDelete, onToggle }: TaskCardProps) => {
   const isOverdue = task.dueDate && new Date(task.dueDate) < new Date() && !task.completed;
 
   return (
-    <div className={`bg-white dark:bg-gray-800 rounded-lg shadow-sm border-2 transition-all hover:shadow-md ${
-      task.completed ? 'border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/20' : 
-      isOverdue ? 'border-red-200 dark:border-red-800' : 'border-gray-200 dark:border-gray-700'
+    <div className={`bg-slate-800 rounded-lg shadow-sm border-2 transition-all duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1 ${
+      task.completed ? 'border-green-500/30 bg-green-900/20' : 
+      isOverdue ? 'border-red-500/30' : 'border-purple-500/30'
     }`}>
       <div className="p-6">
         {/* Header */}

@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Force dark mode */
+/* Force dark mode and prevent horizontal scroll */
 :root {
   color-scheme: dark;
 }
@@ -8,7 +8,22 @@
 body {
   background-color: rgb(15 23 42); /* slate-900 */
   color: white;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100vw;
 }
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   @apply bg-gray-900 text-white;
 }
