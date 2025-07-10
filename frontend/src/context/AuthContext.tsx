@@ -36,7 +36,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const checkAuthStatus = async () => {
     try {
-      const data = await apiRequest('/auth/me');
+      const data = await apiRequest('/api/auth/me');
       setUser(data.user);
     } catch (error) {
       console.error('Auth check failed:', error);
@@ -47,7 +47,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const login = async (email: string, password: string) => {
     try {
-      const data = await apiRequest('/auth/login', {
+      const data = await apiRequest('/api/auth/login', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
       });
@@ -62,7 +62,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const signup = async (username: string, email: string, password: string) => {
     try {
-      const data = await apiRequest('/auth/signup', {
+      const data = await apiRequest('/api/auth/signup', {
         method: 'POST',
         body: JSON.stringify({ username, email, password }),
       });
@@ -77,7 +77,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const logout = async () => {
     try {
-      await apiRequest('/auth/logout', {
+      await apiRequest('/api/auth/logout', {
         method: 'POST',
       });
       setUser(null);
